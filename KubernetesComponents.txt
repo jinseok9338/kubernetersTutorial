@@ -1,0 +1,24 @@
+Node = virtual machine that holds servers 
+pod = smallest unit of K8s/ Abstraction over container. (There is usually one container in one pod)
+Each pod gets its own IP address
+Service = permanent IP address (external Service is accessible from outside but not the internal service)
+Ingress = request goes to the ingress first and forwarded to the services
+Database URL usually in the built application(image from docker hub)
+ComfigMap =  external configuration of your application
+Secret is just like configMap used to store secret data base64 encoded
+Data Storage(volume) is attached to the container for the persistent data = storage on the local machine of remote cloud storage
+If my pod dies(down time), the services are replicated to multiple nodes but they are connected to the same services
+Services are also load balancer
+Deployment is blueprint for my-app pods = abstraction of pods 
+DB can't be replicated through Deployment becuase it holds the data so StatefulSet is used
+ 
+Kubernetes Architecture
+Each node has multiple Pods on it/ 3 processes must be installed on every nodes
+Node should have the runtime such as Docker 
+Kubelet interacts with both the container and node
+Kubelet starts the pod with a container inside
+Kube Proxy forwards the requests just like service
+
+how do you interat with the cluster 
+how to schedule pod/ monitor/ reschedule and restart/ join a new Nodes 
+They are done through Master node/process 
